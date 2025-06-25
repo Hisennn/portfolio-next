@@ -3,24 +3,96 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg-header: #f5f5f5;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e0e0e0;
+  --text-title: #1a1a1a;
+  --text-primary: #333333;
+  --text-dest: #4a4a4a;
+  --text-extra: #555555;
+  --text-secondary: #5b616d;
+  --accent-blue: #1d4ed8;
+  --border-color: #a5aaaf;
+  --border-color-extra: #d9dfe6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--font-poppins);
+  --font-inter: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Tema escuro */
+[data-theme="dark"] {
+  --bg-header: #020405;
+  --bg-primary: #0a0e14;
+  --bg-secondary: #161b22;
+  --text-title: #edf2f7;
+  --text-primary: #d6dde4;
+  --text-dest: #c3cad1;
+  --text-extra: #c5ccd1;
+  --text-secondary: #979da7;
+  --accent-blue: #2a73d3;
+  --border-color: #565e68;
+  --border-color-extra: #30363d;
+}
+
+/* Tema claro */
+[data-theme="light"] {
+  --bg-header: #f5f5f5;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e0e0e0;
+  --text-title: #1a1a1a;
+  --text-primary: #333333;
+  --text-dest: #4a4a4a;
+  --text-extra: #555555;
+  --text-secondary: #5b616d;
+  --accent-blue: #1d4ed8;
+  --border-color: #a5aaaf;
+  --border-color-extra: #d9dfe6;
+}
+
+/* Estilos para spotlight nas skills */
+.spotlight-active .articles-skills-items i {
+  filter: brightness(0.6) saturate(0.7);
+}
+
+.spotlight-active .articles-skills-items li:hover i {
+  filter: brightness(1) saturate(1);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Tooltip */
+.tooltip {
+  position: fixed;
+  width: 365px;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Responsivo para tooltip */
+@media (max-width: 992px) {
+  .tooltip {
+    width: 300px !important;
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .tooltip {
+    display: none !important;
+  }
 }

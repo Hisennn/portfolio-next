@@ -60,19 +60,15 @@ export default function Languages() {
         <li>
           <span className="text-[color:var(--text-primary)]">{texts[lang].english} </span>
           <span className="text-[color:var(--text-secondary)] text-sm lg:text-base">- {texts[lang].advanced}</span>
-          {lang === 'en' && (
-            <>
-              <span> - </span>
-              <a 
-                href="https://cert.efset.org/en/8P1jdm" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[color:var(--accent-blue)] font-medium transition-all duration-200 ease-in-out hover:underline hover:brightness-120 text-sm lg:text-base"
-              >
-                EF SET
-              </a>
-            </>
-          )}
+          <span className="text-[color:var(--text-primary)] font-light text-sm lg:text-base"> | </span>
+          <a 
+            href="https://cert.efset.org/en/8P1jdm" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-[color:var(--accent-blue)] font-medium transition-all duration-200 ease-in-out hover:underline hover:brightness-120 text-sm lg:text-base"
+          >
+            EF SET
+          </a>
         </li>
       </ul>
     </div>
